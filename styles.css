@@ -1,0 +1,655 @@
+/*http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;*/
+}
+
+/*Global Styles*/
+html {
+    background-color: rgba(122, 191, 191, .5);
+}
+body {
+    width: 414px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    color: #0D0D0D;
+}
+main {
+    top: 120px;
+    position: relative;
+}
+h1, h2, h3, h4, menu li, nav ul li, .social ul li, .side-dish, footer {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+}
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 25px;
+}
+nav h3, nav h4, .social h3, .social h4, .search h4, footer h4 {
+    visibility: hidden;
+    height: 0;
+}
+h2, h3 {
+    text-align: center;
+}
+p {
+    line-height: 25px;
+}
+main p {
+    margin-bottom: 10px;
+}
+main p, li, dl {
+    font-family: Montserrat, Arial, sans-serif;
+}
+ul li {
+    list-style-type: square;
+}
+.social ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+.social ul li {
+    list-style-type: none;
+    font-size: 20px;
+    display: flex;
+    flex-direction:column-reverse;
+    align-items: center;
+}
+.social ul li a {
+    color: #EB5428;
+    text-decoration: none;
+}
+.social h3 {
+    height: 0;
+}
+dl {
+    line-height: 35px;
+}
+dt {
+    font-weight: 700;
+    display: inline-block;
+}
+.details dl  dt, .details dl dd {
+    display: inline-block;
+}
+main img {
+    width: 100%;
+}
+main h2 {
+    margin-bottom: 20px;
+}
+.tools {
+    width: 414px;
+    z-index: 1;
+    background-color: #f2f2f2;
+    padding-bottom: 11px;
+}
+.mainbody p {
+    padding: 10px;
+}
+.mainbody ul {
+    line-height: 30px;
+}
+.mainbody ul, .mainbody ol {
+    padding-left: 30px;
+}
+.mainbody dl {
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 5px;
+    width: 50%;
+}
+.mainbody div {
+    margin: 20px auto;
+}
+menu {
+    display: flex;
+    justify-content: space-evenly;
+}
+menu li {
+    list-style-type: none;
+    font-size: 20px;
+}
+menu li {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+menu li a {
+    color: #EB5428;
+    text-decoration: none;
+    font-size: 20px;
+}
+.side-dish {
+    background-color: #7ABFBF;
+    padding-top: 10px;
+    position: relative;
+    top: 40px;
+}
+.side-dish h4 {
+    font-size: 25px;
+}
+.dishes div:nth-child(1), .dishes div:nth-child(2), .dishes div:nth-child(3), .dishes div:nth-child(4) {
+    display: grid;
+    grid-template-areas: "img h4"
+    "img p"
+    "img dl"
+    "img stars";
+    padding: 15px;
+    grid-template-columns: 1.5fr 3fr;
+    column-gap: 20px;
+}
+
+.dishes div dl dd {
+    visibility: hidden;
+    height: 0;
+}
+.side-dish h4 {
+    grid-area: h4;
+}
+.side-dish img {
+    grid-area: img;
+}
+.side-dish p {
+    grid-area: p;
+}
+.side-dish dl {
+    grid-area: dl;
+    line-height: 28px;
+}
+.side-dish dl svg {
+    white-space: nowrap;
+}
+.details, .ingredients-directions {
+    position: relative;
+}
+.ingredients-directions {
+    padding: 40px;
+    line-height: 27px;
+}
+.details {
+    padding: 15px;
+}
+.details dl {
+    width: 55%;
+}
+.directions {
+    top: 40px;
+    position: relative;
+}
+.footer {
+    position: relative;
+    background-color: #ffffff;
+    top: 190px;
+}
+footer {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 15px;
+}
+footer :nth-child(1){
+    order: 2;
+}
+footer :nth-child(2){
+    order: 3;
+}
+footer :nth-child(3){
+    order: 4;
+}
+footer :nth-child(4){
+    order: 1;
+}
+footer img {
+    width: 50%;
+}
+footer h4 {
+    height: 0;
+}
+
+ /*Navigation*/
+ nav {
+    position: fixed;
+    top: 0;
+    width: 414px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    height: 83px;
+    z-index: 1;
+ }
+ nav ul li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+ input[type="checkbox"] {
+    display: none;
+    position: relative;
+    top: 21px;
+    left: 28px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+ }
+ input:checked ~ ul {
+    max-height: 500px;
+}
+ label {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-left: 10px;
+    width: 70px;
+    align-items: center;
+    left: 6px;
+    bottom: 28px;
+}
+label a {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+}
+ label span {
+    display: block;
+    height: 40px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 40px;
+    top: 40px;
+}
+label span:before, label span:after {
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+nav ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+.food-menu li a {
+    text-decoration: none;
+    color: #EB5428;
+}
+nav a {
+    color: #0D0D0D;
+    text-decoration: none;
+    font-size: 20px;
+}
+input:checked ~ label a {
+    display: none;
+}
+input:checked ~ ul {
+    height: 464px;
+}
+input:checked ~ label span {
+    top: 65px;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+    background-color: #EB5428;
+    height: 3px;
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+    background-color: #EB5428;
+    height: 3px;
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+input:checked ~ .search {
+    bottom: 3px;
+}
+.logo {
+    top: 0;
+    position: absolute;
+    left: 104px;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #EB5428;
+    width: 50%;
+    height: 83px;
+}
+.logo a:first-child {
+    display: none;
+}
+.logo svg {
+    position: relative;
+    bottom: 6px;
+}
+.food-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "breakfast brunch lunch"
+        "dinner apps desserts"
+        "beverages . .";
+    position: relative;
+    top: 43px;
+    grid-gap: 15px;
+    background: #f2f2f2;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.food-menu img {
+    width: 70%;
+    position: relative;
+    left: 15px;
+}
+.food-menu img:hover {
+    border: 3px solid #EB5428;
+    border-radius: 37px;
+}
+.breakfast {
+    grid-area: breakfast;
+}
+.brunch {
+    grid-area: brunch;
+}
+.lunch {
+    grid-area: lunch;
+}
+.dinner {
+    grid-area: dinner; 
+}
+.apps {
+    grid-area: apps;
+}
+.desserts {
+    grid-area: desserts;
+}
+.beverages {
+    grid-area: beverages;
+}
+.search {
+    position: relative;
+    background: #f2f2f2;
+    height: 87px;
+    bottom: 28px;
+    z-index: -4;
+}
+.account {
+    position: absolute;
+    top: 11px;
+    left: 336px;
+}
+.search-bar {
+    background: #EB5428;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+}
+button[name="search"] {
+    background: none;
+    border: none;
+}
+.search-bar input {
+    height: 37px;
+    border: none;
+    font-family: Montserrat, Arial, sans-serif;
+    padding: 4px;
+    width: 88%;
+    font-size: 16px;
+}
+
+@media screen and (min-width:700px) and (max-width: 1400px) {
+    body {
+        width: 768px;
+    }
+    .food-menu {
+        top: 60px;
+    }
+}
+
+@media screen and (min-width:700px) {
+    nav {
+        width: 768px;
+        height: 100px;
+    }
+    .account {
+        left: 686px;
+    }
+    .logo {
+        left: 0;
+        width: 15%;
+        height: 100px;
+    }
+    .logo svg {
+        bottom: 14px;
+    }
+    nav ul {
+        overflow: visible;
+    }
+    label a{
+        display: none;
+    }
+    .search {
+        background-color: #ffffff;
+    }
+    .search input{
+        height: 51px;
+        width: 88%;
+    }
+    .search-bar {
+        width: 45%;
+        height: 55px;
+        margin: 20px 109px 0 auto;
+    }
+    .tools {
+        width: 768px;
+        top: 243px;
+        background: none;
+        padding-bottom: 0;
+    }
+    main {
+        top: 195px;
+    }
+    main h2 {
+        text-align: left;
+        padding-left: 15px;
+        margin-bottom: 0;
+        padding-top: 20px;
+        padding-bottom: 18px;
+    }
+    .account svg {
+        width: 60px;
+        height:60px;
+    }
+    menu {
+        background-color: rgb(242 242 242 / 58%);
+        padding: 15px 9px;
+    }
+    .food-menu {
+        display: flex;
+        background-color: #ffffff;
+        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    }
+    .mainbody dl {
+        margin: 0 auto;
+    }
+    .ingredients {
+        width: 90%;
+    }
+    .ingredients-directions {
+        display: flex;
+    }
+    .dishes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "div1 div2"
+        "div3 div4";
+    }
+    .dishes:nth-child(3) {
+        grid-area: div3;
+    }
+    .dishes:nth-child(4) {
+        grid-area: div;
+    }
+    .details dl {
+        width: 34%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+        top: 235px;
+        padding-bottom: 10px;
+    }
+    .social, footer {
+        width: 50%;
+        padding-top: 25px;
+    }
+    .directions {
+        top: 0;
+    }
+}
+
+@media screen and (min-width:1401px) {
+    body, nav {
+        width: 1280px;
+    }
+    main h2 {
+        text-align: center;
+    }
+    .account {
+        left: 1187px;
+    }
+    .food-menu {
+        width: 50%;
+        top: -40px;
+        left: 327px;
+    }
+    .search {
+        top: 100px;
+        background:none;
+    }
+    .search-bar {
+        margin: 0 auto;
+    }
+    .search-bar svg{
+        padding: 10px;
+    }
+    .details {
+        background-color: #0D0D0D;
+        color:#7ABFBF; 
+    }
+    .dishes {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .dishes div {
+        grid-template-areas:
+        "img"
+        "h4"
+        "p"
+        "dl";
+        grid-template-columns: 1fr;
+    }
+    main img {
+        width: 80%;
+    }
+    .mainbody img {
+        width: 40%;
+        position: relative;
+        bottom:344px;
+        left: 97px;
+    }
+    .mainbody p {
+        position: relative;
+        bottom: 1104px;
+        width: 45%;
+        left: 625px;
+    }
+    footer {
+        width: 25%;
+        flex-direction: row-reverse;
+    }
+    footer img {
+        width: 70%;
+    }
+    .footer {
+        width: 1280px;
+        justify-content: space-between;
+    }
+    footer :nth-child(2) {
+        white-space: nowrap;
+    }
+    .food-menu {
+        box-shadow:none;
+        padding-bottom: 0;
+        padding-top: 0;
+        top: -32px;
+    }
+    .tools menu {
+        flex-direction: column;
+        flex-direction: column;
+        width: 10%;
+        background: white;
+        border: 1px solid #EB5428;
+        align-items: center;
+    }
+    .mainbody {
+        height:424px;
+    }
+    .search input {
+        width: 89%;
+    }
+    .stars {
+        grid-area: stars;
+    }
+    .dishes div:nth-child(1), .dishes div:nth-child(2), .dishes div:nth-child(3), .dishes div:nth-child(4) {
+    display: grid;
+    grid-template-areas:
+        "img"
+        "h4"
+        "p"
+        "dl"
+        "stars";
+    column-gap: 20px;
+    grid-template-columns: 1fr;
+    }
+}
